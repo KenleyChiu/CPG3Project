@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="Journal.css">
+    <script type="text/JavaScript" src="Journal.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <title>Daily Journal</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="Home.html">Life Plus</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="Home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="BMI.html">BMI Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Calorie.html">Calorie Intake Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="Journal.html">Daily Journal</a>
+            </li>            
+            <li class="nav-item">
+              <a class="nav-link" href="About.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- <div class="main"> -->
+    <div class="main">
+        <div class="row">
+            <div class="card col-3">
+                <h3 class="card-title text-center">Checklist:</h3>
+                <div class="input-group text-center">
+                    <input class="form-control" type="text" id="checklistInput"> 
+                    <input class="input-group-append" type="button" id="checklistBtn" onclick="addChecklist()" value="+">
+                </div>
+                                
+                <div class="mt-sm-4 pb-sm--1" id="checklistItem"><form action="">
+                    <ul class="text-left" id="checklistItems">
+                        
+                    </ul></form>
+                </div>
+            </div>
+            
+            <div class="card col">
+                <h3 class="card-title text-center">Workout:</h4>
+                <div class="card-body text-center">
+                    <table class="table table-borderless table-responsive-sm"> 
+                        <tr>
+                            <td>Workout Name:<br><input class="form-control" type="text" id="workoutName" placeholder="Workout Name.."></td>
+                            <td>Reps:<br>
+                              <div class="input-group">
+                                  <input class="input-group-append" type="button" id="minusRepsBtn" onclick="" value="-">
+                                  <input class="form-control input-group-append" type="text" id="workoutReps" value="0">
+                                  <input class="input-group-append" type="button" id="addRepsBtn" onclick="" value="+">
+                              </div>
+                            </td>
+                            <td>Sets:<br>
+                              <div class="input-group">
+                                  <input class="input-group-append" type="button" id="minusSetsBtn" onclick="" value="-">
+                                  <input class="form-control input-group-append" type="text" id="workoutSets" value="0">
+                                  <input class="input-group-append" type="button" id="addSetsBtn" onclick="" value="+">
+                              </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <input class="" type="button" id="workoutBtn" onclick="addWorkout()" value="Add Workout">
+                </div>
+                                
+                <div class="mt-sm-4 pb-sm--1" id="workoutItem">
+                    <ul class="text-left" id="workoutItems">                        
+                    </ul>
+                </div>
+
+                <h3 class="card-title text-center">Food Diet:</h3>
+                <div class="card-body text-center">
+                    <table class="table table-borderless"> 
+                        <tr>
+                            <td>Meal Type:<br>                                    
+                              <select class="form-control dropdown" id="mealType">
+                                <option class="dropdown-item" id="breakfast">Breakfast</option>
+                                <option class="dropdown-item" id="lunch">Lunch</option>
+                                <option class="dropdown-item" id="dinner">Dinner</option>
+                                <option class="dropdown-item" id="others">Others</option>
+                                    <!-- <input class="dropdown-item" type="text"> -->                                      
+                              </select>
+                              <!-- </div> -->
+                            </td>
+                            <td>Calorie Intake:<br>
+                              <div class="input-group">
+                                  <input class="input-group-append" type="button" id="minusRepsBtn" onclick="" value="-">
+                                  <input class="form-control input-group-append" type="text" id="calorieIntake" value="0">
+                                  <input class="input-group-append" type="button" id="addRepsBtn" onclick="" value="+">
+                              </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <input class="" type="button" id="workoutBtn" onclick="addFoodDiet()" value="Add Meal">
+                </div>
+
+                <div class="mt-sm-4 pb-sm--1" id="calorieItem">
+                    <ul class="text-left" id="calorieItems">                        
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card col-3">
+              <!-- <div class="card body"> -->
+                <h3 class="card-title text-center">Notes:</h3>
+              <!-- </div> -->
+                <textarea class="form-control" id="notesInput" rows="5"></textarea>
+                <div class="dl">
+                    <input type="button" id="btn" onclick="downloadJournal()" value="Download Journal" />
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- </div> -->
+  </body>
+</html>
