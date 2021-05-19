@@ -5,9 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" type="text/css" href="Journal.css">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="Journal.css">
+    
     <script type="text/JavaScript" src="Journal.js">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -17,7 +19,12 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="Home.html">Life Plus</a>
+        <a class="navbar-brand" href="Home.html">
+            <div class="logoTitle">
+                <img class="logo img-fluid" src="images/lifeplus.png" alt="lifeplus.png">
+                <label class="logoLabel">Life Plus</label>
+            </div>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,96 +50,223 @@
       </div>
     </nav>
     
-    <!-- <div class="main"> -->
+    <br> 
+
     <div class="main">
         <div class="row">
-            <div class="card col-3">
-                <h3 class="card-title text-center">Checklist:</h3>
-                <div class="input-group text-center">
-                    <input class="form-control" type="text" id="checklistInput"> 
-                    <input class="input-group-append" type="button" id="checklistBtn" onclick="addChecklist()" value="+">
-                </div>
-                                
-                <div class="mt-sm-4 pb-sm--1" id="checklistItem"><form action="">
-                    <ul class="text-left" id="checklistItems">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Checklist</h4>
                         
-                    </ul></form>
+                            <form>
+                                <div class="row">
+                                    <div class="form-group">                                        
+                                        <label class="form-label" for="checklistInput">Today's Activities</label>
+                                        <div class="input-group text-center">
+                                            <input class="form-control" type="text" id="checklistInput" placeholder="Task.."> 
+                                            <div class="input-group-append">
+                                                <input class="btn btn-success input-group-text" type="button" id="checklistBtn" onclick="addChecklist()" value="+">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-group" id="checklistItems">
+                                        <!-- <div class="mb-sm-2">
+                                            <li class="list-group-item">
+                                                <div class="checkEntry">
+                                                    <div class="form-check-inline">             
+                                                        <input class="form-check-input" type="checkbox" id="check">                                       
+                                                        <label class="form-check-label" for="check">checklistInput.value</label> 
+                                                    </div>
+                                                    <input class="btn-dark" type="button" id="checkDeleteBtn" onclick="deleteChecklist(this.id)" value="Delete">
+                                                </div>                                            
+                                            </li>
+                                        </div> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row mt-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Notes:</h4>
+                            <textarea class="form-control" id="notesInput" rows="5"></textarea>
+                            <br>
+                            <div class="dl">
+                                <input class="btn btn-success" type="button" id="btn" onclick="downloadJournal()" value="Download Journal" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="card col">
-                <h3 class="card-title text-center">Workout:</h4>
-                <div class="card-body text-center">
-                    <table class="table table-borderless table-responsive-sm"> 
-                        <tr>
-                            <td>Workout Name:<br><input class="form-control" type="text" id="workoutName" placeholder="Workout Name.."></td>
-                            <td>Reps:<br>
-                              <div class="input-group">
-                                  <input class="input-group-append" type="button" id="minusRepsBtn" onclick="" value="-">
-                                  <input class="form-control input-group-append" type="text" id="workoutReps" value="0">
-                                  <input class="input-group-append" type="button" id="addRepsBtn" onclick="" value="+">
-                              </div>
-                            </td>
-                            <td>Sets:<br>
-                              <div class="input-group">
-                                  <input class="input-group-append" type="button" id="minusSetsBtn" onclick="" value="-">
-                                  <input class="form-control input-group-append" type="text" id="workoutSets" value="0">
-                                  <input class="input-group-append" type="button" id="addSetsBtn" onclick="" value="+">
-                              </div>
-                            </td>
-                        </tr>
-                    </table>
-                    <input class="" type="button" id="workoutBtn" onclick="addWorkout()" value="Add Workout">
-                </div>
-                                
-                <div class="mt-sm-4 pb-sm--1" id="workoutItem">
-                    <ul class="text-left" id="workoutItems">                        
-                    </ul>
-                </div>
+            <div class="col-sm-8">
+                <!-- <div class="row" style="margin-left:2px;"> -->
+                    <div class="workout card">
+                        <div class="card-body">
+                            <h4 class="card-title">Workout</h4>
+                            <div class="row">
+                                <div class="col">                                
+                                    <div class="form-group">
+                                        <label class="form-label" for="">Today's Workouts</label>
+                                        <input class="form-control" type="text" id="workoutName" placeholder="Workout Name..">
+                                    </div>
+                                </div>
+                                <div class="col">                                
+                                    <div class="form-group">
+                                        <label class="form-label" for="">Reps</label>
+                                        <div class="input-group">                                        
+                                            <input class="btn btn-danger input-group-text" type="button" id="minusRepsBtn" onclick="minusReps()" value="-">
+                                            <input class="form-control input-group-append" type="text" id="workoutReps" value="0">
+                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="plusReps()" value="+">                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">                                
+                                    <div class="form-group">
+                                        <label class="form-label" for="">Sets</label>
+                                        <div class="input-group">                                        
+                                            <input class="btn btn-danger input-group-text" type="button" id="minusRepsBtn" onclick="minusSets()" value="-">
+                                            <input class="form-control input-group-append" type="text" id="workoutSets" value="0">
+                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="plusSets()" value="+">                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <h3 class="card-title text-center">Food Diet:</h3>
-                <div class="card-body text-center">
-                    <table class="table table-borderless"> 
-                        <tr>
-                            <td>Meal Type:<br>                                    
-                              <select class="form-control dropdown" id="mealType">
-                                <option class="dropdown-item" id="breakfast">Breakfast</option>
-                                <option class="dropdown-item" id="lunch">Lunch</option>
-                                <option class="dropdown-item" id="dinner">Dinner</option>
-                                <option class="dropdown-item" id="others">Others</option>
-                                    <!-- <input class="dropdown-item" type="text"> -->                                      
-                              </select>
-                              <!-- </div> -->
-                            </td>
-                            <td>Calorie Intake:<br>
-                              <div class="input-group">
-                                  <input class="input-group-append" type="button" id="minusRepsBtn" onclick="" value="-">
-                                  <input class="form-control input-group-append" type="text" id="calorieIntake" value="0">
-                                  <input class="input-group-append" type="button" id="addRepsBtn" onclick="" value="+">
-                              </div>
-                            </td>
-                        </tr>
-                    </table>
-                    <input class="" type="button" id="workoutBtn" onclick="addFoodDiet()" value="Add Meal">
-                </div>
+                            <br>
 
-                <div class="mt-sm-4 pb-sm--1" id="calorieItem">
-                    <ul class="text-left" id="calorieItems">                        
-                    </ul>
-                </div>
-            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input class="btn btn-success" type="button" id="workoutBtn" onclick="addWorkout()" value="Add Workout">
+                                </div>
+                            </div>
 
-            <div class="card col-3">
-              <!-- <div class="card body"> -->
-                <h3 class="card-title text-center">Notes:</h3>
-              <!-- </div> -->
-                <textarea class="form-control" id="notesInput" rows="5"></textarea>
-                <div class="dl">
-                    <input type="button" id="btn" onclick="downloadJournal()" value="Download Journal" />
+                            <br>
+
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-group" id="workoutItems">       
+                                        <!-- <div class="mb-sm-2">
+                                            <li class="list-group-item">
+                                                <div class="workoutEntry">                                    
+                                                    <label class="form-label">workoutName.value</label> 
+                                                    <input class="btn-dark" type="button" id="workoutDeleteBtn" onclick="deleteWorkout(this.id)" value="Delete">
+                                                </div>                                            
+                                            </li>
+                                        </div> -->
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <h4 class="card-title">Food Diet</h4>
+                            <div class="row">
+                                <div class="col">                                
+                                    <div class="form-group">
+                                        <label class="form-label" for="">Meal Type</label> 
+                                        <!-- <div class="input-group">                                            
+                                            <input class="form-control" type="text" id="workoutName" placeholder="Workout Name..">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown</button>
+                                                <div class="dropdown-menu">
+                                                  <a class="dropdown-item" href="#">Action</a>
+                                                  <a class="dropdown-item" href="#">Another action</a>
+                                                  <a class="dropdown-item" href="#">Something else here</a>
+                                                  <div role="separator" class="dropdown-divider"></div>
+                                                  <a class="dropdown-item" href="#">Separated link</a>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <select class="form-control dropdown" id="mealType">
+                                            <option class="dropdown-item" id="breakfast">Breakfast</option>
+                                            <option class="dropdown-item" id="lunch">Lunch</option>
+                                            <option class="dropdown-item" id="dinner">Dinner</option>
+                                            <option class="dropdown-item" id="others">Others</option>                               
+                                          </select>
+                                    </div>
+                                </div>
+                                <div class="col">                                
+                                    <div class="form-group">
+                                        <label class="form-label" for="">Food/Drink</label>
+                                        <input class="form-control" type="text" id="foodDrink" placeholder="Food/Drink..">
+                                    </div>
+                                </div>
+                                <div class="col">                                
+                                    <div class="form-group">
+                                        <label class="form-label" for="">Calorie Intake</label>
+                                        <div class="input-group">                                        
+                                            <input class="btn btn-danger input-group-text" type="button" id="minusCaloriesBtn" onclick="minusCalories()" value="-">
+                                            <input class="form-control input-group-append" type="text" id="calorieIntake" value="0">
+                                            <input class="btn btn-success input-group-text" type="button" id="addCaloriesBtn" onclick="plusCalories()" value="+">                                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col">
+                                    <input class="btn btn-success" type="button" id="mealBtn" onclick="addMeal()" value="Add Meal">
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-group" id="mealItems">       
+                                        <!-- <div class="mb-sm-2">
+                                            <li class="list-group-item">
+                                                <div class="mealEntry">                                    
+                                                    <label class="form-label">mealType.value</label> 
+                                                    <input class="btn-dark" type="button" id="mealDeleteBtn" onclick="deleteMeal(this.id)" value="Delete">
+                                                </div>                                            
+                                            </li>
+                                        </div> -->
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    <!-- </div> -->
                 </div>
-            </div>
-        </div>
+            </div>           
+
+        </div>        
     </div>
-  <!-- </div> -->
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Additional Information</h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <p>1640 Riverside Drive, Hill Valley, California
+                    <br/>info@mywebsite.com
+                    <br/>+ 01 234 567 88
+                    <br/>+ 01 234 567 89</p>
+                </div>
+            <div>
+        <div class="footer-copyright text-center">© 2020 Copyright: MyWebsite.com</div>
+      </footer>
+    
   </body>
 </html>

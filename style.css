@@ -1,54 +1,70 @@
-.main{
-	height: auto;
-	width: 90%;
-	margin: auto;
-	height: 81%;
-}
-.results{
-	height: 71%;
+.main {
+  height: auto;
+  width: 90%;
+  margin: auto;
+  height: 81%;
 }
 
-.intake{
-	height: 100%;
+.logoTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.exercise{
-	height: 80%;
-	margin-left: 2%;
-	margin-bottom: 2%;
-	margin-right: 2%;
+.logo {
+  zoom: 7.5%;
 }
 
-.detail{
-	padding: 1% !important;
-	padding-top: 2% !important;
-}
-.spec{
-	height: 170px;
+.logoLabel {
+  margin-left: 5px;
 }
 
-.dets{
-	height: 260px !important;
+.results {
+  height: 71%;
+}
+
+.intake {
+  height: 100%;
+}
+
+.exercise {
+  height: 80%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+}
+
+.detail {
+  padding: 1% !important;
+  padding-top: 2% !important;
+}
+.spec {
+  height: 170px;
+}
+
+.dets {
+  height: 260px !important;
 }
 
 .page-footer {
-    background-color: #222 !important;
-    color: #ccc !important;
-    padding: 60px 0 30px;
-    margin-top: 20px;
+  background-color: #222 !important;
+  color: #ccc !important;
+  padding: 60px 0 30px;
+  margin-top: 20px;
 }
 
-.container{
-    background-color: #222 !important;
-    color: #ccc !important;
-    padding: 0px;
-    margin: 0px;
+.container {
+  background-color: #222 !important;
+  color: #ccc !important;
+  padding: 0px;
+  margin: 0px;
 }
+
 .footer-copyright {
-    color: #666 !important;
-    padding: 40px 0;
+  color: #666 !important;
+  padding: 40px 0;
 }
 
-body{
-	background-color: #c5c5a6 !important;
-};
+body {
+  background-color: #c5c5a6 !important;
+}

@@ -11,12 +11,12 @@ function compute() {
   multiplierArray = [1.2,1.375,1.55,1.725,1.9];
 
   for (var i = 0, length = radios.length; i < length; i++) {
-  if (radios[i].checked) {
+    if (radios[i].checked) {
 
-    gender=radios[i].value;
-    break;
+      gender=radios[i].value;
+      break;
+    }
   }
-}
 
 
   ft=parseInt(document.getElementById("feet").value);
