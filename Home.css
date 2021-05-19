@@ -18,19 +18,21 @@ body {
 
 .nav-link,
 .navbar-brand {
-    cursor: pointer !important;
+  cursor: pointer !important;
 }
 
-.navbar-toggler
-{
+.navbar-toggler {
   color: #fff !important;
 }
+
 .nav-link {
-    margin-right: 1em !important;
+  margin-right: 1em !important;
 }
+
 .nav-link:hover {
-    color: #85E385 !important;
+  color: #85e385 !important;
 }
+
 /* carousel CSS */
 .carousel-item {
   height: 45rem;
@@ -46,10 +48,10 @@ body {
   text-align: center;
   color: white;
 }
-.carousel-container h1
-{
+
+.carousel-container h1 {
   font-size: 9vw;
-  font-family: sans-serif;
+  font-family:fantasy;
 }
 
 .d-block {
@@ -59,7 +61,6 @@ body {
   background-size: cover;
   opacity: 0.5;
 }
-
 
 /* .calorie {
   background: #c5c5a6;
@@ -86,10 +87,9 @@ body {
 
 /* BMI CSS */
 
-.bmi {
-  background: #b1b173;
-}
-.bmi-title {
+.bmi-title,
+.calorie-title,
+.journal-title {
   color: white;
   font-size: 50px;
   font-weight: 700;
@@ -97,6 +97,7 @@ body {
   margin-bottom: 20px;
   text-transform: uppercase;
 }
+
 /* .bmi img {
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -105,116 +106,95 @@ body {
   margin-top: 16px;
 }  */
 
-.bmi-section
-{
-  background: url(images/BMI-picture.jpg) no-repeat left;
+.bmi-section,
+.calorie-section,
+.journal-section {
   background-size: 65%;
-  background-color: #b1b173;
   overflow: hidden;
   padding: 140px;
 }
 
-.bmi-inner-container
-{
+.bmi-section {
+  background: url(images/BMI-picture.jpg) no-repeat left;
+  background-color: #b1b173;
+}
+
+.bmi-inner-container,
+.calorie-inner-container,
+.journal-inner-container {
   width: 55%;
-  float: right;
-  background-color: black;
+  background-color: #222;
   color: white;
   padding: 30px;
-
-}
-.bmi-inner-container a {
-  border: 1px solid #6ab446;
-  background: #6ab446;
-  border-radius: 0;
-  color: #fff;
-}
-.bmi-inner-container a:hover {
-  border: 1px solid #fff;
-  background: #fff;
-  color: #000;
 }
 
-
-/* Calorie CSS */
-
-.calorie-title {
-  color: #333;
-  font-size: 50px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  margin-top: 16px;
-  text-transform: uppercase;
-}
-
-.calorie-section
-{
-  background: url(images/Calorie-background.jpg) no-repeat right;
-  background-size: 65%;
-  background-color: #c5c5a6;
-  overflow: hidden;
-  padding: 140px;
-}
-
-.calorie-inner-container
-{
-  width: 55%;
-  float: left;
-  background-color: white;
-  padding: 30px;
-
-}
-.calorie-inner-container a {
-  border: 1px solid #6ab446;
-  background: #6ab446;
-  border-radius: 0;
-  color: #fff;
-}
-.calorie-inner-container a:hover {
-  border: 1px solid #fff;
-  background: #fff;
-  color: #000;
-}
-
-/* Journal */
-
-.journal-title {
-  color: #333;
-  font-size: 50px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  margin-top: 16px;
-  text-transform: uppercase;
-}
-
-.journal-section
-{
-  background: url(images/JournalWriting.jpg) no-repeat left;
-  background-size: 65%;
-  background-color: #dedec8;
-  overflow: hidden;
-  padding: 140px;
-}
-
-.journal-inner-container
-{
-  width: 55%;
+.bmi-inner-container,
+.journal-inner-container {
   float: right;
-  background-color: white;
-  padding: 30px;
-
 }
+
+.bmi-inner-container a,
+.calorie-inner-container a,
 .journal-inner-container a {
   border: 1px solid #6ab446;
   background: #6ab446;
   border-radius: 0;
   color: #fff;
 }
+
+.bmi-inner-container a:hover,
+.calorie-inner-container a:hover,
 .journal-inner-container a:hover {
   border: 1px solid #fff;
   background: #fff;
   color: #000;
 }
+
+/* Calorie CSS */
+
+/* .calorie-title {
+  
+} */
+
+.calorie-section {
+  background: url(images/Calorie-background.jpg) no-repeat right;
+  background-color: #c5c5a6;
+}
+
+.calorie-inner-container {
+  float: left;
+}
+
+/* .calorie-inner-container a {
+  
+} */
+
+/* .calorie-inner-container a:hover {
+  
+} */
+
+/* Journal */
+
+/* .journal-title {
+  
+} */
+
+.journal-section {
+  background: url(images/JournalWriting.jpg) no-repeat left;
+  background-color: #dedec8;
+}
+
+/* .journal-inner-container{
+  float: right;
+} */
+
+/* .journal-inner-container a {
+  
+} */
+
+/* .journal-inner-container a:hover {
+  
+} */
 
 .page-footer {
   background-color: #222;
@@ -229,6 +209,7 @@ body {
 .about {
   background: #b1b173;
 }
+
 .about-title {
   color: #333;
   font-size: 50px;
@@ -265,40 +246,42 @@ body {
   color: #5e5e55;
   padding: 0 121px;
 }
+
 .team .card-columns {
   -webkit-column-count: 4;
   -moz-column-count: 4;
   column-count: 4;
 }
+
 .team .card {
   background: none;
   border: none;
 }
 
-.team .card-text
-{
+.team .card-text {
   font-size: 1vw;
   margin-bottom: 0;
   text-transform: uppercase;
 }
+
 .team .card-title {
   font-size: 2vw;
   margin-bottom: 0;
   text-transform: uppercase;
 }
 
-
-
-@media screen and (max-width:1130px)
-{
-  .bmi-section, .calorie-section, .journal-section
-  {
+@media screen and (max-width: 1130px) {
+  .bmi-section,
+  .calorie-section,
+  .journal-section {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   }
-  .bmi-inner-container, .calorie-inner-container, .journal-inner-container{
+  .bmi-inner-container,
+  .calorie-inner-container,
+  .journal-inner-container {
     padding: 50px;
   }
 }

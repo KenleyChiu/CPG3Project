@@ -78,9 +78,11 @@ body {
 {
   color: #fff !important;
 }
+
 .nav-link {
     margin-right: 1em !important;
 }
+
 .nav-link:hover {
     color: #85E385 !important;
 }
