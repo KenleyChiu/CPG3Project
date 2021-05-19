@@ -5,7 +5,7 @@
   height: 81%;
 }
 
-.logoTitle {
+.logoTitle, .moods {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,19 +19,9 @@
   margin-left: 5px;
 }
 
-/* .workout{
-	height: 100%;
-} */
-
-/* .row.mb-3{
-    display: flex;
-    flex-wrap: wrap;
+.mood{
+    margin: 0 32px 0 32px;
 }
-
-.row.mb-3 > [class*='col-'] {
-    display: flex;
-    flex-direction: column;
-  } */
 
 #checklistItems li,
 #workoutItems li,

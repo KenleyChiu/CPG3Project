@@ -193,6 +193,16 @@ function addMeal(){
     return;
 }
 
+// function minusFunction(){
+//     // var elementId = "";
+//     // if(minusClick) elementId = sleepHours;
+
+//     var hours = parseInt(document.getElementById('sleepHours').value) - 1;
+//     if(hours >= 0) document.getElementById('sleepHours').value = hours;    
+//     return;
+// }
+
+
 function minusCalories(){
     var calories = parseInt(document.getElementById('calorieIntake').value) - 1;
     if(calories >= 0) document.getElementById('calorieIntake').value = calories;    
@@ -202,6 +212,15 @@ function minusCalories(){
 function plusCalories(){
     var calories = parseInt(document.getElementById('calorieIntake').value) + 1;
     document.getElementById('calorieIntake').value = calories;    
+    return;
+}
+
+function download(fileName, journalText) {
+    var element = document.createElement('a');
+    element.setAttribute('href','data:text/plain;charset=utf-8,' + encodeURIComponent(journalText));
+    element.setAttribute('download', fileName);
+    document.body.appendChild(element);
+    element.click();
     return;
 }
 
@@ -227,13 +246,4 @@ function downloadJournal(){
     text += "\r\nNotes:\r\n" + document.getElementById("notesInput").value;
     var fileName = "DailyJournal.txt";
     return download(fileName, text);
-}
-
-function download(fileName, journalText) {
-    var element = document.createElement('a');
-    element.setAttribute('href','data:text/plain;charset=utf-8,' + encodeURIComponent(journalText));
-    element.setAttribute('download', fileName);
-    document.body.appendChild(element);
-    element.click();
-    return;
 }

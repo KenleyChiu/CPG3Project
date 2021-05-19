@@ -55,7 +55,7 @@
     <div class="main">
         <div class="row">
             <div class="col-sm-4">
-                <div class="row">
+                <div class="row" >
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Checklist</h4>
@@ -110,13 +110,81 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> <br>
             </div>
             
             <div class="col-sm-8">
                 <!-- <div class="row" style="margin-left:2px;"> -->
                     <div class="workout card">
                         <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-8"> 
+                                    <h4 class="card-title">Sleep Time</h4>                                                       
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label class="form-label" for="">Hours</label>
+                                                <div class="input-group">                                        
+                                                    <input class="btn btn-danger input-group-text" type="button" id="minusHoursBtn" onclick="minusHours()" value="-">
+                                                    <input class="form-control input-group-append" type="text" id="sleepHours" value="0">
+                                                    <input class="btn btn-success input-group-text" type="button" id="addHoursBtn" onclick="plusHours()" value="+">                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <script>
+                                            document.getElementById('minusHoursBtn').addEventListener("click", function(){
+                                                var minusClick = true;
+                                                console.log("clicked");
+                                            });
+                                        </script> -->
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label class="form-label" for="">Minutes</label>
+                                                <div class="input-group">                                        
+                                                    <input class="btn btn-danger input-group-text" type="button" id="minusMinutesBtn" onclick="minusMinutes()" value="-">
+                                                    <input class="form-control input-group-append" type="text" id="sleepMinutes" value="0">
+                                                    <input class="btn btn-success input-group-text" type="button" id="addMinutesBtn" onclick="plusMinutes()" value="+">                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label class="form-label" for="">Seconds</label>
+                                                <div class="input-group">                                        
+                                                    <input class="btn btn-danger input-group-text" type="button" id="minusSecondsBtn" onclick="minusSeconds()" value="-">
+                                                    <input class="form-control input-group-append" type="text" id="sleepSeconds" value="0">
+                                                    <input class="btn btn-success input-group-text" type="button" id="addSecondsBtn" onclick="plusSeconds()" value="+">                                        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <br>
+                                </div>
+                                <div class="col"> 
+                                    <h4 class="card-title">Mood</h4>                                                       
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label class="form-label" for="">How I'm Feeling Today</label>
+                                                <div class="moodsCheckbox">
+                                                    <div class="moods" style="float:left;">           
+                                                        <input class="form-check-input" type="radio" name="mood" id="mood1">
+                                                        <img class="mood" src="images/mood1.png" style="zoom:20%;">    
+                                                        <input class="form-check-input" type="radio" name="mood" id="mood2">
+                                                        <img class="mood" src="images/mood2.png" style="zoom:20%;">   
+                                                        <input class="form-check-input" type="radio" name="mood" id="mood3"> 
+                                                        <img class="mood" src="images/mood3.png" style="zoom:20%;"> 
+                                                        <input class="form-check-input" type="radio" name="mood" id="mood4">
+                                                        <img class="mood" src="images/mood4.png" style="zoom:20%;">   
+                                                        <input class="form-check-input" type="radio" name="mood" id="mood5">
+                                                        <img class="mood" src="images/mood5.png" style="zoom:20%;">   
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <br>
+                                </div> 
+                            </div>
+                                
                             <h4 class="card-title">Workout</h4>
                             <div class="row">
                                 <div class="col">                                
@@ -242,8 +310,8 @@
                             </div>
 
                         </div>
-                    <!-- </div> -->
-                </div>
+                    </div>
+                <!-- </div> -->
             </div>           
 
         </div>        
