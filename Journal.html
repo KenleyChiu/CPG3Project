@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    
+
     <script type="text/JavaScript" src="Journal.js">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -17,7 +17,7 @@
     <title>Daily Journal</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="Home.html">
             <div class="logoTitle">
@@ -41,7 +41,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="Journal.html">Daily Journal</a>
-            </li>            
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="About.html">About</a>
             </li>
@@ -49,8 +49,8 @@
         </div>
       </div>
     </nav>
-    
-    <br> 
+
+    <br>
 
     <div class="main">
         <div class="row">
@@ -59,13 +59,13 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title">Checklist</h4>
-                        
+
                             <form>
                                 <div class="row">
-                                    <div class="form-group">                                        
+                                    <div class="form-group">
                                         <label class="form-label" for="checklistInput">Today's Activities</label>
                                         <div class="input-group text-center">
-                                            <input class="form-control" type="text" id="checklistInput" placeholder="Task.."> 
+                                            <input class="form-control" type="text" id="checklistInput" placeholder="Task..">
                                             <div class="input-group-append">
                                                 <input class="btn btn-success input-group-text" type="button" id="checklistBtn" onclick="addChecklist()" value="+">
                                             </div>
@@ -82,12 +82,12 @@
                                         <!-- <div class="mb-sm-2">
                                             <li class="list-group-item">
                                                 <div class="checkEntry">
-                                                    <div class="form-check-inline">             
-                                                        <input class="form-check-input" type="checkbox" id="check">                                       
-                                                        <label class="form-check-label" for="check">checklistInput.value</label> 
+                                                    <div class="form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" id="check">
+                                                        <label class="form-check-label" for="check">checklistInput.value</label>
                                                     </div>
                                                     <input class="btn-dark" type="button" id="checkDeleteBtn" onclick="deleteChecklist(this.id)" value="Delete">
-                                                </div>                                            
+                                                </div>
                                             </li>
                                         </div> -->
                                     </ul>
@@ -112,22 +112,22 @@
                     </div>
                 </div> <br>
             </div>
-            
+
             <div class="col-sm-8">
                 <!-- <div class="row" style="margin-left:2px;"> -->
                     <div class="workout card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-8"> 
-                                    <h4 class="card-title">Sleep Time</h4>                                                       
+                                <div class="col-sm-8">
+                                    <h4 class="card-title">Sleep Time</h4>
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
                                                 <label class="form-label" for="">Hours</label>
-                                                <div class="input-group">                                        
+                                                <div class="input-group">
                                                     <input class="btn btn-danger input-group-text" type="button" id="minusHoursBtn" onclick="minusHours()" value="-">
                                                     <input class="form-control input-group-append" type="text" id="sleepHours" value="0">
-                                                    <input class="btn btn-success input-group-text" type="button" id="addHoursBtn" onclick="plusHours()" value="+">                                        
+                                                    <input class="btn btn-success input-group-text" type="button" id="addHoursBtn" onclick="plusHours()" value="+">
                                                 </div>
                                             </div>
                                         </div>
@@ -140,76 +140,76 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label class="form-label" for="">Minutes</label>
-                                                <div class="input-group">                                        
+                                                <div class="input-group">
                                                     <input class="btn btn-danger input-group-text" type="button" id="minusMinutesBtn" onclick="minusMinutes()" value="-">
                                                     <input class="form-control input-group-append" type="text" id="sleepMinutes" value="0">
-                                                    <input class="btn btn-success input-group-text" type="button" id="addMinutesBtn" onclick="plusMinutes()" value="+">                                        
+                                                    <input class="btn btn-success input-group-text" type="button" id="addMinutesBtn" onclick="plusMinutes()" value="+">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label class="form-label" for="">Seconds</label>
-                                                <div class="input-group">                                        
+                                                <div class="input-group">
                                                     <input class="btn btn-danger input-group-text" type="button" id="minusSecondsBtn" onclick="minusSeconds()" value="-">
                                                     <input class="form-control input-group-append" type="text" id="sleepSeconds" value="0">
-                                                    <input class="btn btn-success input-group-text" type="button" id="addSecondsBtn" onclick="plusSeconds()" value="+">                                        
+                                                    <input class="btn btn-success input-group-text" type="button" id="addSecondsBtn" onclick="plusSeconds()" value="+">
                                                 </div>
                                             </div>
                                         </div>
                                     </div> <br>
                                 </div>
-                                <div class="col"> 
-                                    <h4 class="card-title">Mood</h4>                                                       
+                                <div class="col">
+                                    <h4 class="card-title">Mood</h4>
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
                                                 <label class="form-label" for="">How I'm Feeling Today</label>
                                                 <div class="moodsCheckbox">
-                                                    <div class="moods" style="float:left;">           
+                                                    <div class="moods" style="float:left;">
                                                         <input class="form-check-input" type="radio" name="mood" id="mood1">
-                                                        <img class="mood" src="images/mood1.png" style="zoom:20%;">    
+                                                        <img class="mood" src="images/mood1.png" style="zoom:20%;">
                                                         <input class="form-check-input" type="radio" name="mood" id="mood2">
-                                                        <img class="mood" src="images/mood2.png" style="zoom:20%;">   
-                                                        <input class="form-check-input" type="radio" name="mood" id="mood3"> 
-                                                        <img class="mood" src="images/mood3.png" style="zoom:20%;"> 
+                                                        <img class="mood" src="images/mood2.png" style="zoom:20%;">
+                                                        <input class="form-check-input" type="radio" name="mood" id="mood3">
+                                                        <img class="mood" src="images/mood3.png" style="zoom:20%;">
                                                         <input class="form-check-input" type="radio" name="mood" id="mood4">
-                                                        <img class="mood" src="images/mood4.png" style="zoom:20%;">   
+                                                        <img class="mood" src="images/mood4.png" style="zoom:20%;">
                                                         <input class="form-check-input" type="radio" name="mood" id="mood5">
-                                                        <img class="mood" src="images/mood5.png" style="zoom:20%;">   
+                                                        <img class="mood" src="images/mood5.png" style="zoom:20%;">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div> <br>
-                                </div> 
+                                </div>
                             </div>
-                                
+
                             <h4 class="card-title">Workout</h4>
                             <div class="row">
-                                <div class="col">                                
+                                <div class="col">
                                     <div class="form-group">
                                         <label class="form-label" for="">Today's Workouts</label>
                                         <input class="form-control" type="text" id="workoutName" placeholder="Workout Name..">
                                     </div>
                                 </div>
-                                <div class="col">                                
+                                <div class="col">
                                     <div class="form-group">
                                         <label class="form-label" for="">Reps</label>
-                                        <div class="input-group">                                        
+                                        <div class="input-group">
                                             <input class="btn btn-danger input-group-text" type="button" id="minusRepsBtn" onclick="minusReps()" value="-">
                                             <input class="form-control input-group-append" type="text" id="workoutReps" value="0">
-                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="plusReps()" value="+">                                        
+                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="plusReps()" value="+">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">                                
+                                <div class="col">
                                     <div class="form-group">
                                         <label class="form-label" for="">Sets</label>
-                                        <div class="input-group">                                        
+                                        <div class="input-group">
                                             <input class="btn btn-danger input-group-text" type="button" id="minusRepsBtn" onclick="minusSets()" value="-">
                                             <input class="form-control input-group-append" type="text" id="workoutSets" value="0">
-                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="plusSets()" value="+">                                        
+                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="plusSets()" value="+">
                                         </div>
                                     </div>
                                 </div>
@@ -227,25 +227,25 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <ul class="list-group" id="workoutItems">       
+                                    <ul class="list-group" id="workoutItems">
                                         <!-- <div class="mb-sm-2">
                                             <li class="list-group-item">
-                                                <div class="workoutEntry">                                    
-                                                    <label class="form-label">workoutName.value</label> 
+                                                <div class="workoutEntry">
+                                                    <label class="form-label">workoutName.value</label>
                                                     <input class="btn-dark" type="button" id="workoutDeleteBtn" onclick="deleteWorkout(this.id)" value="Delete">
-                                                </div>                                            
+                                                </div>
                                             </li>
                                         </div> -->
                                     </ul>
                                 </div>
                             </div>
-                            
+
                             <h4 class="card-title">Food Diet</h4>
                             <div class="row">
-                                <div class="col">                                
+                                <div class="col">
                                     <div class="form-group">
-                                        <label class="form-label" for="">Meal Type</label> 
-                                        <!-- <div class="input-group">                                            
+                                        <label class="form-label" for="">Meal Type</label>
+                                        <!-- <div class="input-group">
                                             <input class="form-control" type="text" id="workoutName" placeholder="Workout Name..">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown</button>
@@ -262,23 +262,23 @@
                                             <option class="dropdown-item" id="breakfast">Breakfast</option>
                                             <option class="dropdown-item" id="lunch">Lunch</option>
                                             <option class="dropdown-item" id="dinner">Dinner</option>
-                                            <option class="dropdown-item" id="others">Others</option>                               
+                                            <option class="dropdown-item" id="others">Others</option>
                                           </select>
                                     </div>
                                 </div>
-                                <div class="col">                                
+                                <div class="col">
                                     <div class="form-group">
                                         <label class="form-label" for="">Food/Drink</label>
                                         <input class="form-control" type="text" id="foodDrink" placeholder="Food/Drink..">
                                     </div>
                                 </div>
-                                <div class="col">                                
+                                <div class="col">
                                     <div class="form-group">
                                         <label class="form-label" for="">Calorie Intake</label>
-                                        <div class="input-group">                                        
+                                        <div class="input-group">
                                             <input class="btn btn-danger input-group-text" type="button" id="minusCaloriesBtn" onclick="minusCalories()" value="-">
                                             <input class="form-control input-group-append" type="text" id="calorieIntake" value="0">
-                                            <input class="btn btn-success input-group-text" type="button" id="addCaloriesBtn" onclick="plusCalories()" value="+">                                       
+                                            <input class="btn btn-success input-group-text" type="button" id="addCaloriesBtn" onclick="plusCalories()" value="+">
                                         </div>
                                     </div>
                                 </div>
@@ -296,13 +296,13 @@
 
                             <div class="row">
                                 <div class="col">
-                                    <ul class="list-group" id="mealItems">       
+                                    <ul class="list-group" id="mealItems">
                                         <!-- <div class="mb-sm-2">
                                             <li class="list-group-item">
-                                                <div class="mealEntry">                                    
-                                                    <label class="form-label">mealType.value</label> 
+                                                <div class="mealEntry">
+                                                    <label class="form-label">mealType.value</label>
                                                     <input class="btn-dark" type="button" id="mealDeleteBtn" onclick="deleteMeal(this.id)" value="Delete">
-                                                </div>                                            
+                                                </div>
                                             </li>
                                         </div> -->
                                     </ul>
@@ -312,9 +312,9 @@
                         </div>
                     </div>
                 <!-- </div> -->
-            </div>           
+            </div>
 
-        </div>        
+        </div>
     </div>
 
     <footer class="page-footer">
@@ -335,6 +335,6 @@
             <div>
         <div class="footer-copyright text-center">© 2020 Copyright: MyWebsite.com</div>
       </footer>
-    
+
   </body>
 </html>

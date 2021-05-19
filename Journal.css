@@ -70,3 +70,19 @@
 body {
   background-color: #c5c5a6 !important;
 }
+
+.nav-link,
+.navbar-brand {
+    cursor: pointer !important;
+}
+
+.navbar-toggler
+{
+  color: #fff !important;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color: #85E385 !important;
+}
