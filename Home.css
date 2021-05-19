@@ -2,6 +2,7 @@ body {
   background-color: #c5c5a6 !important;
 }
 
+/* NAVIGATION BAR */
 .logoTitle {
   display: flex;
   justify-content: center;
@@ -33,6 +34,9 @@ body {
   color: #85e385 !important;
 }
 
+
+/* HOME PAGE */
+
 /* carousel CSS */
 .carousel-item {
   height: 45rem;
@@ -62,30 +66,12 @@ body {
   opacity: 0.5;
 }
 
-/* .calorie {
-  background: #c5c5a6;
-} */
-
-/* .calorie img {
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  margin-bottom: 16px;
-  margin-top: 16px;
+.animate__animated.animate__fadeIn {
+  --animate-duration: 1s;
 }
-.calorie a {
-  border: 1px solid #6ab446;
-  background: #6ab446;
-  border-radius: 0;
-  color: #fff;
-}
-.calorie a:hover {
-  border: 1px solid #fff;
-  background: #fff;
-  color: #000;
-} */
 
-/* BMI CSS */
+
+/* Title CSS */
 
 .bmi-title,
 .calorie-title,
@@ -98,14 +84,8 @@ body {
   text-transform: uppercase;
 }
 
-/* .bmi img {
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  margin-bottom: 16px;
-  margin-top: 16px;
-}  */
 
+/* Section CSS */
 .bmi-section,
 .calorie-section,
 .journal-section {
@@ -119,6 +99,18 @@ body {
   background-color: #b1b173;
 }
 
+.calorie-section {
+  background: url(images/Calorie-background.jpg) no-repeat right;
+  background-color: #c5c5a6;
+}
+
+.journal-section {
+  background: url(images/JournalWriting.jpg) no-repeat left;
+  background-color: #dedec8;
+}
+
+/* Inner Container CSS */
+
 .bmi-inner-container,
 .calorie-inner-container,
 .journal-inner-container {
@@ -126,6 +118,7 @@ body {
   background-color: #222;
   color: white;
   padding: 30px;
+  border-radius: 25px;
 }
 
 .bmi-inner-container,
@@ -133,12 +126,18 @@ body {
   float: right;
 }
 
+.calorie-inner-container {
+  float: left;
+}
+
+/* Inner Container Button CSS */
+
 .bmi-inner-container a,
 .calorie-inner-container a,
 .journal-inner-container a {
   border: 1px solid #6ab446;
   background: #6ab446;
-  border-radius: 0;
+  border-radius: 15px;
   color: #fff;
 }
 
@@ -150,51 +149,7 @@ body {
   color: #000;
 }
 
-/* Calorie CSS */
-
-/* .calorie-title {
-  
-} */
-
-.calorie-section {
-  background: url(images/Calorie-background.jpg) no-repeat right;
-  background-color: #c5c5a6;
-}
-
-.calorie-inner-container {
-  float: left;
-}
-
-/* .calorie-inner-container a {
-  
-} */
-
-/* .calorie-inner-container a:hover {
-  
-} */
-
-/* Journal */
-
-/* .journal-title {
-  
-} */
-
-.journal-section {
-  background: url(images/JournalWriting.jpg) no-repeat left;
-  background-color: #dedec8;
-}
-
-/* .journal-inner-container{
-  float: right;
-} */
-
-/* .journal-inner-container a {
-  
-} */
-
-/* .journal-inner-container a:hover {
-  
-} */
+/* Footer CSS */
 
 .page-footer {
   background-color: #222;
@@ -206,36 +161,81 @@ body {
   padding: 40px 0;
 }
 
-.about {
-  background: #b1b173;
+
+/* ABOUT PAGE*/
+
+
+.about-title-section {
+  background-image: url(images/DLSU2.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.about-title {
-  color: #333;
-  font-size: 50px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  margin-top: 16px;
+.about-title-section h1
+{
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  font-size: 10vw;
+  text-align: center;
+  color: white;
+}
+
+.about-section {
+  background-size: 65%;
+  overflow: hidden;
+  padding: 140px;
+  background: url(images/DLSU.jpg) no-repeat left;
+  background-color: #a8a85d;
+}
+
+.about-inner-container {
+  width: 55%;
+  background-color: #222;
+  color: white;
+  padding: 50px;
+  border-radius: 25px;
+  float: right;
+}
+
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left, .right{
+  width: 50%;
+}
+
+.left img, .right img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.left h4, .right h4{
   text-transform: uppercase;
-}
-.about img {
-  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  margin-bottom: 16px;
-  margin-top: 16px;
-}
-
-.meet {
-  background: #c5c5a6;
-}
-
-.meet h1 {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  font-size: 12vw;
   text-align: center;
 }
+
+.left p, .right p{
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.goals-title, .teams-title{
+  font-size: 5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.teams-title{
+  padding-bottom: 5rem;
+}
+
 
 .background {
   background: #dedec8;
@@ -269,6 +269,10 @@ body {
   margin-bottom: 0;
   text-transform: uppercase;
 }
+
+
+
+
 
 @media screen and (max-width: 1130px) {
   .bmi-section,

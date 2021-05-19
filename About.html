@@ -8,11 +8,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="Home.css">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css"/>
     <title>About</title>
   </head>
   <body>
+
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="Home.html">
@@ -47,31 +49,45 @@
     </nav>
 
     <!--About US -->
-    <div class="container-fluid about">
-        <div class="row">
-            <div class="col">
-                <img src="images/DLSU.jpg" class="img-fluid">
+    <div class="row">
+        <div class="about-title-section">
+              <h1 data-aos="fade-down">WHO WE ARE</h1>
+          </div>
+      </div>
+
+      <div class="row" data-aos="fade-right"  data-aos-anchor-placement="top-center">
+          <div class="about-section">
+            <div class="about-inner-container" data-aos="fade-left"  data-aos-anchor-placement="top-center">
+                <p class= "text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
+              </div>
             </div>
-            <div class="col">
-                <h3 class="about-title">Who We Are</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis.</p>
-            </div>
+        </div>
+
+    <!--GOALS  -->
+      <div class="row">
+        <h1 class="goals-title" data-aos="fade-down">Goals</h1>
+        <div class="column left" data-aos="fade-up">
+            <img src="images/icons8-heart-health-64.png">
+            <h4>Health</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis</p>
+        </div>
+
+        <div class="column right" data-aos="fade-up">
+            <img src="images/icons8-open-book-64.png">
+            <h4>Record</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis</p>
         </div>
       </div>
 
-    <!-- Meet the Team Header -->
-      <div class="container-fluid meet">
-          <div class="row">
-            <h1>Meet the team</h1>
-          </div>
-      </div>
+
 
     <!--Team -->
     <div class="background">
         <div class="container team">
-            <div class="row">
+            <div class="row" data-aos="zoom-in">
+              <h1 class="teams-title">Meet the team</h1>
                 <!-- Kenley Chiu-->
-                <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+                <div class="card col-lg-3 col-md-3 col-sm-4 text-center" data-aos="fade-up">
                         <img class="card-img-top rounded-circle" src="images/Kenley.jpg" alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title">Kenley Chiu</h4>
@@ -79,7 +95,7 @@
                     </div>
                 </div>
                 <!-- Ryan Panes-->
-                <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+                <div class="card col-lg-3 col-md-3 col-sm-4 text-center" data-aos="fade-down">
                         <img class="card-img-top rounded-circle" src="images/Ryan.jpg" alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title">Ryan Panes</h4>
@@ -87,7 +103,7 @@
                     </div>
                 </div>
                 <!-- Matthew Sabularse-->
-                <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+                <div class="card col-lg-3 col-md-3 col-sm-4 text-center" data-aos="fade-up">
                         <img class="card-img-top rounded-circle" src="images/Matthew.jpg" alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title">Matthew Sabularse</h4>
@@ -95,7 +111,7 @@
                     </div>
                 </div>
                 <!-- Emerson Tiu-->
-                <div class="card col-lg-3 col-md-3 col-sm-4 text-center">
+                <div class="card col-lg-3 col-md-3 col-sm-4 text-center" data-aos="fade-down">
                         <img class="card-img-top rounded-circle" src="images/Emerson.jpg" alt="Card image">
                     <div class="card-body">
                         <h4 class="card-title">Emerson Tiu</h4>
@@ -126,6 +142,17 @@
         <div class="footer-copyright text-center">© 2020 Copyright: MyWebsite.com</div>
       </footer>
 
+      <!-- Bootstrap Scripts -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+      <script>
+        AOS.init(
+          {
+            duration: 1300
+          }
+        );
+      </script>
 
     </body>
   </html>
