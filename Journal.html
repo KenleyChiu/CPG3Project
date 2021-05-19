@@ -118,32 +118,26 @@
                     <div class="workout card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-sm-8"> 
+                                <div class="col-sm-7"> 
                                     <h4 class="card-title">Sleep Time</h4>                                                       
                                     <div class="row">
                                         <div class="col">
                                             <div class="form-group">
                                                 <label class="form-label" for="">Hours</label>
                                                 <div class="input-group">                                        
-                                                    <input class="btn btn-danger input-group-text" type="button" id="minusHoursBtn" onclick="minusHours()" value="-">
+                                                    <input class="btn btn-danger input-group-text" type="button" id="minusHoursBtn" onclick="updateHours(this.id)" value="-">
                                                     <input class="form-control input-group-append" type="text" id="sleepHours" value="0">
-                                                    <input class="btn btn-success input-group-text" type="button" id="addHoursBtn" onclick="plusHours()" value="+">                                        
+                                                    <input class="btn btn-success input-group-text" type="button" id="addHoursBtn" onclick="updateHours(this.id)" value="+">                                        
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <script>
-                                            document.getElementById('minusHoursBtn').addEventListener("click", function(){
-                                                var minusClick = true;
-                                                console.log("clicked");
-                                            });
-                                        </script> -->
                                         <div class="col">
                                             <div class="form-group">
                                                 <label class="form-label" for="">Minutes</label>
                                                 <div class="input-group">                                        
-                                                    <input class="btn btn-danger input-group-text" type="button" id="minusMinutesBtn" onclick="minusMinutes()" value="-">
+                                                    <input class="btn btn-danger input-group-text" type="button" id="minusMinutesBtn" onclick="updateMinutes(this.id)" value="-">
                                                     <input class="form-control input-group-append" type="text" id="sleepMinutes" value="0">
-                                                    <input class="btn btn-success input-group-text" type="button" id="addMinutesBtn" onclick="plusMinutes()" value="+">                                        
+                                                    <input class="btn btn-success input-group-text" type="button" id="addMinutesBtn" onclick="updateMinutes(this.id)" value="+">                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -151,15 +145,15 @@
                                             <div class="form-group">
                                                 <label class="form-label" for="">Seconds</label>
                                                 <div class="input-group">                                        
-                                                    <input class="btn btn-danger input-group-text" type="button" id="minusSecondsBtn" onclick="minusSeconds()" value="-">
+                                                    <input class="btn btn-danger input-group-text" type="button" id="minusSecondsBtn" onclick="updateSeconds(this.id)" value="-">
                                                     <input class="form-control input-group-append" type="text" id="sleepSeconds" value="0">
-                                                    <input class="btn btn-success input-group-text" type="button" id="addSecondsBtn" onclick="plusSeconds()" value="+">                                        
+                                                    <input class="btn btn-success input-group-text" type="button" id="addSecondsBtn" onclick="updateSeconds(this.id)" value="+">                                        
                                                 </div>
                                             </div>
                                         </div>
                                     </div> <br>
                                 </div>
-                                <div class="col"> 
+                                <div class="col-sm-auto"> 
                                     <h4 class="card-title">Mood</h4>                                                       
                                     <div class="row">
                                         <div class="col">
@@ -167,15 +161,15 @@
                                                 <label class="form-label" for="">How I'm Feeling Today</label>
                                                 <div class="moodsCheckbox">
                                                     <div class="moods" style="float:left;">           
-                                                        <input class="form-check-input" type="radio" name="mood" id="mood1">
+                                                        <input class="form-check-input" type="radio" name="mood" id="Angry">
                                                         <img class="mood" src="images/mood1.png" style="zoom:20%;">    
-                                                        <input class="form-check-input" type="radio" name="mood" id="mood2">
+                                                        <input class="form-check-input" type="radio" name="mood" id="Sad">
                                                         <img class="mood" src="images/mood2.png" style="zoom:20%;">   
-                                                        <input class="form-check-input" type="radio" name="mood" id="mood3"> 
+                                                        <input class="form-check-input" type="radio" name="mood" id="Neutral"> 
                                                         <img class="mood" src="images/mood3.png" style="zoom:20%;"> 
-                                                        <input class="form-check-input" type="radio" name="mood" id="mood4">
+                                                        <input class="form-check-input" type="radio" name="mood" id="Happy">
                                                         <img class="mood" src="images/mood4.png" style="zoom:20%;">   
-                                                        <input class="form-check-input" type="radio" name="mood" id="mood5">
+                                                        <input class="form-check-input" type="radio" name="mood" id="Excited">
                                                         <img class="mood" src="images/mood5.png" style="zoom:20%;">   
                                                     </div>
                                                 </div>
@@ -197,9 +191,9 @@
                                     <div class="form-group">
                                         <label class="form-label" for="">Reps</label>
                                         <div class="input-group">                                        
-                                            <input class="btn btn-danger input-group-text" type="button" id="minusRepsBtn" onclick="minusReps()" value="-">
+                                            <input class="btn btn-danger input-group-text" type="button" id="minusRepsBtn" onclick="updateReps(this.id)" value="-">
                                             <input class="form-control input-group-append" type="text" id="workoutReps" value="0">
-                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="plusReps()" value="+">                                        
+                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="updateReps(this.id)" value="+">                                        
                                         </div>
                                     </div>
                                 </div>
@@ -207,9 +201,9 @@
                                     <div class="form-group">
                                         <label class="form-label" for="">Sets</label>
                                         <div class="input-group">                                        
-                                            <input class="btn btn-danger input-group-text" type="button" id="minusRepsBtn" onclick="minusSets()" value="-">
+                                            <input class="btn btn-danger input-group-text" type="button" id="minusSetsBtn" onclick="updateSets(this.id)" value="-">
                                             <input class="form-control input-group-append" type="text" id="workoutSets" value="0">
-                                            <input class="btn btn-success input-group-text" type="button" id="addRepsBtn" onclick="plusSets()" value="+">                                        
+                                            <input class="btn btn-success input-group-text" type="button" id="addSetsBtn" onclick="updateSets(this.id)" value="+">                                        
                                         </div>
                                     </div>
                                 </div>
@@ -276,9 +270,9 @@
                                     <div class="form-group">
                                         <label class="form-label" for="">Calorie Intake</label>
                                         <div class="input-group">                                        
-                                            <input class="btn btn-danger input-group-text" type="button" id="minusCaloriesBtn" onclick="minusCalories()" value="-">
+                                            <input class="btn btn-danger input-group-text" type="button" id="minusCaloriesBtn" onclick="updateCalories(this.id)" value="-">
                                             <input class="form-control input-group-append" type="text" id="calorieIntake" value="0">
-                                            <input class="btn btn-success input-group-text" type="button" id="addCaloriesBtn" onclick="plusCalories()" value="+">                                       
+                                            <input class="btn btn-success input-group-text" type="button" id="addCaloriesBtn" onclick="updateCalories(this.id)" value="+">                                       
                                         </div>
                                     </div>
                                 </div>
