@@ -3,7 +3,6 @@ var checklistIncrement = 0;
 
 function addChecklist(){
     var checklistItem = document.getElementById('checklistInput').value;
-    // console.log(checklistArr[0]);
 
     if(checklistItem.length == 0) {
         checklistIncrement++;
@@ -33,10 +32,8 @@ function addChecklist(){
 
     let checkLabel = document.createElement('label');        
     checkLabel.setAttribute("for", "check" + checklistArr.length);
-    checkLabel.innerHTML = " " + checklistItem;
-    // checkLabel.classList.add("form-check-label");
+    checkLabel.innerHTML = checklistItem;
 
-    // checkLabel.appendChild(checkInput);
     checkInline.appendChild(checkInput);
     checkInline.appendChild(checkLabel);
     
@@ -44,7 +41,7 @@ function addChecklist(){
     checkBtn.classList.add("btn-dark");
     checkBtn.setAttribute("type", "button");
     checkBtn.setAttribute("id", "checkDeleteBtn" + checklistArr.length);
-    checkBtn.setAttribute("onclick", "deleteEntry(this.id)");
+    checkBtn.setAttribute("onclick", "deleteEntry(this.id,'checklist')");
     checkBtn.setAttribute("value", "Delete");
     
     entryDiv.appendChild(checkInline);
@@ -57,6 +54,8 @@ function addChecklist(){
     return;
 }
 
+var doneChecklistArr = new Array();
+
 function doneChecklist(clicked_id){
     var myCheckbox = document.getElementById(clicked_id);
     var parentCheckbox = myCheckbox.parentNode.parentNode.parentNode.parentNode;
@@ -66,36 +65,90 @@ function doneChecklist(clicked_id){
     else var clickedStatus = false;
 
     var myButton = myCheckbox.parentNode.parentNode.lastChild.id;
-
     if(clickedStatus){
+        doneChecklistArr.push(myCheckbox.parentNode.lastChild.innerHTML);
+        for(var x=0;x<doneChecklistArr.length;x++){
+            if(checklistArr.includes(doneChecklistArr[x])) checklistArr.splice(checklistArr.indexOf(doneChecklistArr[x],0),1);
+        }        
         document.getElementById(myButton).setAttribute("disabled","");
-    } else document.getElementById(myButton).removeAttribute("disabled","");
+    } else {
+        checklistArr.push(myCheckbox.parentNode.lastChild.innerHTML);
+        for(var x=0;x<checklistArr.length;x++){
+            if(doneChecklistArr.includes(checklistArr[x])) doneChecklistArr.splice(doneChecklistArr.indexOf(checklistArr[x],0),1);            
+        }
+        document.getElementById(myButton).removeAttribute("disabled","");
+    }
     return;
 }
 
-function deleteEntry(clicked_id){
-    var myButton = document.getElementById(clicked_id);
-    var parentDiv = myButton.parentNode.parentNode.parentNode;
-    myButton.parentNode.parentNode.parentNode.remove(parentDiv);
+var sleepArr = new Array();
+
+function addSleep(){    
+    sleepArr.push(document.getElementById('sleepHours').value + " Hours");
+    sleepArr.push(document.getElementById('sleepMinutes').value + " Minutes");
+    sleepArr.push(document.getElementById('sleepSeconds').value + " Seconds");
     return;
+}
+
+function delSleep(){
+    for(var x=-1;x<=sleepArr.length;x++){
+        sleepArr.pop();
+    }
+}
+
+function updateHours(elementId){
+    var value = 0;
+    if(elementId == 'minusHoursBtn') var value = parseInt(document.getElementById('sleepHours').value) - 1;
+    if(elementId == 'addHoursBtn') var value = parseInt(document.getElementById('sleepHours').value) + 1;
+    if(value >= 0) document.getElementById('sleepHours').value = value;    
+    return;
+}
+
+function updateMinutes(elementId){
+    var value = 0;
+    if(elementId == 'minusMinutesBtn') var value = parseInt(document.getElementById('sleepMinutes').value) - 1;
+    if(elementId == 'addMinutesBtn') var value = parseInt(document.getElementById('sleepMinutes').value) + 1;
+    if(value >= 0) document.getElementById('sleepMinutes').value = value;    
+    return;
+}
+
+function updateSeconds(elementId){
+    var value = 0;
+    if(elementId == 'minusSecondsBtn') var value = parseInt(document.getElementById('sleepSeconds').value) - 1;
+    if(elementId == 'addSecondsBtn') var value = parseInt(document.getElementById('sleepSeconds').value) + 1;
+    if(value >= 0) document.getElementById('sleepSeconds').value = value;    
+    return;
+}
+
+function addMood(){
+    var moods = document.getElementsByName('mood');
+    
+    for (var x=0;x<moods.length;x++) {
+        if (moods[x].checked) {
+            var mood = moods[x].id;
+            break;
+        } else var mood = moods[2].id;
+    }
+    return mood;
 }
 
 var workoutArr = Array.from(Array(), () => new Array(3));
+var workoutArrEntry = new Array();
 var workoutIncrement = 0;
 
 function addWorkout(){
     var workoutName = document.getElementById('workoutName').value;
     var workoutReps = document.getElementById('workoutReps').value + " Reps";
     var workoutSets = document.getElementById('workoutSets').value + " Sets";
-    // var index = workoutArr.length;
 
     if(workoutName.length == 0) {
         workoutIncrement++;
         workoutName = "Workout " + workoutIncrement;
     }
-    workoutArr.push([workoutName,workoutReps,workoutSets]);
-    // console.log(workoutArr[index][0]);
 
+    var entryText = "[" + workoutName + "] " + workoutReps + " for " + workoutSets;
+    workoutArr.push([workoutName,workoutReps,workoutSets]);
+    
     let workoutDiv = document.createElement('div');
     workoutDiv.setAttribute("id", "workoutDiv" + workoutArr.length);  
     workoutDiv.classList.add("mb-sm-2");
@@ -107,15 +160,16 @@ function addWorkout(){
     entryDiv.classList.add("workoutEntry");
 
     let nameRepSet = document.createElement('label');
-    nameRepSet.innerText = "[" + workoutName + "] " + workoutReps + " for " + workoutSets;
+    nameRepSet.innerText = entryText;
     nameRepSet.classList.add("text");
     nameRepSet.classList.add("d-inline");
+    workoutArrEntry.push(entryText);
 
     let workoutBtn = document.createElement('input');
     workoutBtn.classList.add("btn-dark");
     workoutBtn.setAttribute("type", "button");
     workoutBtn.setAttribute("id", "workoutDeleteBtn" + workoutArr.length);
-    workoutBtn.setAttribute("onclick", "deleteEntry(this.id)");
+    workoutBtn.setAttribute("onclick", "deleteEntry(this.id,'workout')");
     workoutBtn.setAttribute("value", "Delete");
 
     entryDiv.appendChild(nameRepSet);
@@ -128,38 +182,32 @@ function addWorkout(){
     return;
 }
 
-function minusReps(){
-    var reps = parseInt(document.getElementById('workoutReps').value) - 1;
-    if(reps >= 0) document.getElementById('workoutReps').value = reps;    
+function updateReps(elementId){
+    var value = 0;
+    if(elementId == 'minusRepsBtn') var value = parseInt(document.getElementById('workoutReps').value) - 1;
+    if(elementId == 'addRepsBtn') var value = parseInt(document.getElementById('workoutReps').value) + 1;
+    if(value >= 0) document.getElementById('workoutReps').value = value;    
     return;
 }
 
-function plusReps(){
-    var reps = parseInt(document.getElementById('workoutReps').value) + 1;
-    document.getElementById('workoutReps').value = reps;    
-    return;
-}
-
-function minusSets(){
-    var sets = parseInt(document.getElementById('workoutSets').value) - 1;
-    if(sets >= 0) document.getElementById('workoutSets').value = sets;    
-    return;
-}
-
-function plusSets(){
-    var sets = parseInt(document.getElementById('workoutSets').value) + 1;
-    document.getElementById('workoutSets').value = sets;    
+function updateSets(elementId){
+    var value = 0;
+    if(elementId == 'minusSetsBtn') var value = parseInt(document.getElementById('workoutSets').value) - 1;
+    if(elementId == 'addSetsBtn') var value = parseInt(document.getElementById('workoutSets').value) + 1;
+    if(value >= 0) document.getElementById('workoutSets').value = value;    
     return;
 }
 
 var dietArr = Array.from(Array(), () => new Array(3));
+var dietArrEntry = new Array();
 
 function addMeal(){
     var mealType = document.getElementById('mealType').value;
     var foodDrink = document.getElementById('foodDrink').value;
     var calorieIntake = document.getElementById('calorieIntake').value + " Calories";
+    var entryText = "[" + mealType + "] " + foodDrink + " - " + calorieIntake;
+
     dietArr.push([mealType,foodDrink,calorieIntake]);
-    // console.log(dietArr[0]);
 
     let mealDiv = document.createElement('div');
     mealDiv.setAttribute("id", "mealDiv" + dietArr.length);  
@@ -172,15 +220,16 @@ function addMeal(){
     entryDiv.classList.add("mealEntry");
 
     let mealFoodCalorie = document.createElement('label');
-    mealFoodCalorie.innerText = "[" + mealType + "] " + foodDrink + " - " + calorieIntake;
+    mealFoodCalorie.innerText = entryText;
     mealFoodCalorie.classList.add("text");
     mealFoodCalorie.classList.add("d-inline");
+    dietArrEntry.push(entryText);
 
     let mealBtn = document.createElement('input');
     mealBtn.classList.add("btn-dark");
     mealBtn.setAttribute("type", "button");
     mealBtn.setAttribute("id", "mealDeleteBtn" + dietArr.length);
-    mealBtn.setAttribute("onclick", "deleteEntry(this.id)");
+    mealBtn.setAttribute("onclick", "deleteEntry(this.id,'diet')");
     mealBtn.setAttribute("value", "Delete");
 
     entryDiv.appendChild(mealFoodCalorie);
@@ -193,25 +242,39 @@ function addMeal(){
     return;
 }
 
-// function minusFunction(){
-//     // var elementId = "";
-//     // if(minusClick) elementId = sleepHours;
-
-//     var hours = parseInt(document.getElementById('sleepHours').value) - 1;
-//     if(hours >= 0) document.getElementById('sleepHours').value = hours;    
-//     return;
-// }
-
-
-function minusCalories(){
-    var calories = parseInt(document.getElementById('calorieIntake').value) - 1;
-    if(calories >= 0) document.getElementById('calorieIntake').value = calories;    
+function updateCalories(elementId){
+    var value = 0;
+    if(elementId == 'minusCaloriesBtn') var value = parseInt(document.getElementById('calorieIntake').value) - 1;
+    if(elementId == 'addCaloriesBtn') var value = parseInt(document.getElementById('calorieIntake').value) + 1;
+    if(value >= 0) document.getElementById('calorieIntake').value = value;    
     return;
 }
 
-function plusCalories(){
-    var calories = parseInt(document.getElementById('calorieIntake').value) + 1;
-    document.getElementById('calorieIntake').value = calories;    
+function deleteEntry(clicked_id,arrType){
+    var myButton = document.getElementById(clicked_id);
+    var parentDiv = myButton.parentNode.parentNode.parentNode;
+
+    myButton.parentNode.parentNode.parentNode.remove(parentDiv);
+
+    var checklistLabel = myButton.parentNode.firstChild.lastChild.innerHTML;  
+    var workoutDietLabel = myButton.parentNode.firstChild.innerHTML;   
+
+    if(arrType == 'checklist') {
+        if(checklistArr.includes(checklistLabel)) checklistArr.splice(checklistArr.indexOf(checklistLabel,0), 1);              
+        if(doneChecklistArr.includes(checklistLabel)) doneChecklistArr.splice(doneChecklistArr.indexOf(checklistLabel,0), 1);  
+    }
+    if(arrType == 'diet') {
+        if(dietArrEntry.includes(workoutDietLabel)) {
+            dietArr.splice(dietArrEntry.indexOf(workoutDietLabel,0), 1);      
+            dietArrEntry.splice(dietArrEntry.indexOf(workoutDietLabel,0), 1);              
+        }
+    }
+    if(arrType == 'workout') {
+        if(workoutArrEntry.includes(workoutDietLabel)) {
+            workoutArr.splice(workoutArrEntry.indexOf(workoutDietLabel,0), 1);      
+            workoutArrEntry.splice(workoutArrEntry.indexOf(workoutDietLabel,0), 1);              
+        }
+    }
     return;
 }
 
@@ -227,22 +290,40 @@ function download(fileName, journalText) {
 function downloadJournal(){
     var text = "Lifestyle Planner Journal\r\n";
     var date = new Date();
-    // var index = 0;
+    
     text += "Date Today (MM/DD/YYYY): " + (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + "\r\n";
     
     text += "\r\nChecklist:\r\n";
+    text += "*Completed\r\n"
+    for(var x=0;x<doneChecklistArr.length;x++){
+        text += doneChecklistArr[x] + "\r\n";
+    }    
+    text += "*Not Completed\r\n"
     for(var x=0;x<checklistArr.length;x++){
         text += checklistArr[x] + "\r\n";
     }
+
+    text += "\r\nSleep Time:\r\n";
+    addSleep();
+    for(var x=0;x<sleepArr.length;x++){
+        text += sleepArr[x] + " ";
+    }
+    delSleep();
+    
+    text += "\r\n\r\nMood:\r\n";
+    mood = addMood();
+    text += mood + "\r\n";
+
     text += "\r\nWorkout Routine:\r\n";
     for(var x=0;x<workoutArr.length;x++){
         text += "[" + workoutArr[x][0] + "] " + workoutArr[x][1] + " for " + workoutArr[x][2] + "\r\n";
     }
+
     text += "\r\nFood Diet:\r\n";
     for(var x=0;x<dietArr.length;x++){
         text += "[" + dietArr[x][0] + "] " + dietArr[x][1] + " - " + dietArr[x][2] + "\r\n";
-        index++;
     }
+
     text += "\r\nNotes:\r\n" + document.getElementById("notesInput").value;
     var fileName = "DailyJournal.txt";
     return download(fileName, text);
