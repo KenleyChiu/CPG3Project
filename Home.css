@@ -55,7 +55,7 @@ body {
 
 .carousel-container h1 {
   font-size: 9vw;
-  font-family:fantasy;
+  font-family:runmedium;
 }
 
 .d-block {
@@ -277,7 +277,8 @@ body {
 @media screen and (max-width: 1130px) {
   .bmi-section,
   .calorie-section,
-  .journal-section {
+  .journal-section,
+  .about-section {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -285,7 +286,17 @@ body {
   }
   .bmi-inner-container,
   .calorie-inner-container,
-  .journal-inner-container {
+  .journal-inner-container,
+  .about-inner-container {
     padding: 50px;
   }
+}
+
+@font-face {
+  font-family: 'runmedium';
+  src: url('runmedium-2vjo-webfont.woff2') format('woff2'),
+       url('runmedium-2vjo-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
