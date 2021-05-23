@@ -1,5 +1,6 @@
 body {
   background-color: #c5c5a6 !important;
+  overflow-x: hidden;
 }
 
 /* NAVIGATION BAR */
@@ -58,10 +59,10 @@ body {
 }
 
 .d-block {
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
   opacity: 0.5;
 }
 
@@ -98,8 +99,7 @@ body {
 }
 
 .about-row {
-  background: url(images/meeting.jpg) no-repeat left;
-  background-size: 60%;
+  background: url(images/meeting2.jpg) no-repeat left;
   background-color: #a8a85d;
 }
 
