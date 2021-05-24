@@ -50,25 +50,6 @@
   /* height: 260px !important; */
 }
 
-.page-footer {
-  background-color: #222 !important;
-  color: #ccc !important;
-  padding: 60px 0 30px;
-  margin-top: 20px;
-}
-
-.container {
-  background-color: #222 !important;
-  color: #ccc !important;
-  padding: 0px;
-  margin: 0px;
-}
-
-.footer-copyright {
-  color: #666 !important;
-  padding: 40px 0;
-}
-
 body {
   background-color: #c5c5a6 !important;
 }
@@ -89,4 +70,16 @@ body {
 
 .nav-link:hover {
     color: #85E385 !important;
+}
+
+.page-footer {
+  background-color: #222 !important;
+  color: #ccc !important;
+  padding: 60px 0 30px;
+  margin-top: 20px;
+}
+
+.footer-copyright {
+  color: #666 !important;
+  padding: 40px 0;
 }
